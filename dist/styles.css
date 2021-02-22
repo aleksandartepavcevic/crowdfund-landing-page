@@ -1,3 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%;
+  font-family: "Commissioner", sans-serif; }
+
+.flex {
+  display: flex; }
+  .flex-jc-sb {
+    justify-content: space-between; }
+  .flex-ai-c {
+    align-items: center; }
+
 .header {
   padding-bottom: 25rem;
   background-image: url("../images/image-hero-mobile.jpg");
@@ -24,19 +40,3 @@
   .main--container {
     width: 87.2%;
     margin: auto; }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
-
-html {
-  font-size: 62.5%;
-  font-family: "Commissioner", sans-serif; }
-
-.flex {
-  display: flex; }
-  .flex-jc-sb {
-    justify-content: space-between; }
-  .flex-ai-c {
-    align-items: center; }

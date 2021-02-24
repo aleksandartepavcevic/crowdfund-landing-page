@@ -24,7 +24,7 @@
       </nav>
     </header>
 
-    <main class="main main--container">
+    <main class="main flex flex-jc-c">
       <div class="main__card">
         <img
           src="images/logo-mastercraft.svg"
@@ -35,12 +35,18 @@
         <p>
           A beautifully handcrafted monitor stand to reduce neck and eye strain.
         </p>
-        <button class="main__card__btn btn--project">
-          <a href="#">Back this project</a>
-        </button>
-        <a href="#"
-          ><img src="images/icon-bookmark.svg" alt="bookmark-icon"
-        /></a>
+        <div class="main__card__div flex flex-ai-c">
+          <input
+            type="button"
+            class="main__card__div__btn main__card__div__btn--project"
+            value="Back this project"
+          />
+          <img
+            src="images/icon-bookmark.svg"
+            alt="bookmark-icon"
+            class="main__card__div__bookmark"
+          />
+        </div>
       </div>
     </main>
   </body>

@@ -16,13 +16,13 @@
       left: calc(50% - 2.8rem);
     }
 
-    h1 {
-      margin: calc(3rem + 2.8rem) auto 0 auto;
+    &__textMajor {
+      margin: calc(3rem + 2.5rem) auto 0 auto;
       width: 192px;
       text-align: center;
     }
 
-    p {
+    &__textMinor {
       font-size: 1.4rem;
       color: $gray;
       margin: 2.8rem auto 0 auto;
@@ -30,26 +30,47 @@
     }
 
     &__div {
+      margin-top: 2.8rem;
+      padding-bottom: 4rem;
+
       &__btn {
         text-decoration: none;
         color: $white;
-        background-color: $moderateCyan;
-        font-size: 1.4rem;
-        font-weight: 700;
         border-radius: 50px;
         border: none;
-        padding: 1.9rem 4.35rem;
+        padding: 1.7rem 4.35rem;
+        background-color: $moderateCyan;
 
+        &--bookmark {
+          img {
+            width: 14px;
+            height: 17px;
+          }
+
+          padding: 1.5rem 1.8rem;
+          background-color: $darkGray;
+        }
         &--project {
-          margin-top: 2.8rem;
           margin-right: 1rem;
+          font-size: 1.4rem;
+          font-weight: 700;
         }
       }
+    }
 
-      &__bookmark {
-        width: 56px;
-        height: 56px;
-      }
+    &--statistics {
+      position: relative;
+      top: calc(23rem + 2.4rem);
+    }
+
+    &__textValue {
+      margin-top: 3.8rem;
+      font-size: 3rem;
+    }
+
+    &__textValueTotal {
+      margin-top: 1.4rem;
+      color: $gray;
     }
   }
 }

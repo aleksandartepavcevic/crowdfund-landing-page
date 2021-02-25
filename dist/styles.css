@@ -41,27 +41,41 @@ html {
       position: absolute;
       top: -2.8rem;
       left: calc(50% - 2.8rem); }
-    .main__card h1 {
-      margin: calc(3rem + 2.8rem) auto 0 auto;
+    .main__card__textMajor {
+      margin: calc(3rem + 2.5rem) auto 0 auto;
       width: 192px;
       text-align: center; }
-    .main__card p {
+    .main__card__textMinor {
       font-size: 1.4rem;
       color: #7a7a7a;
       margin: 2.8rem auto 0 auto;
       width: 270px; }
-    .main__card__div__btn {
-      text-decoration: none;
-      color: #fff;
-      background-color: #3cb4ac;
-      font-size: 1.4rem;
-      font-weight: 700;
-      border-radius: 50px;
-      border: none;
-      padding: 1.9rem 4.35rem; }
-      .main__card__div__btn--project {
-        margin-top: 2.8rem;
-        margin-right: 1rem; }
-    .main__card__div__bookmark {
-      width: 56px;
-      height: 56px; }
+    .main__card__div {
+      margin-top: 2.8rem;
+      padding-bottom: 4rem; }
+      .main__card__div__btn {
+        text-decoration: none;
+        color: #fff;
+        border-radius: 50px;
+        border: none;
+        padding: 1.7rem 4.35rem;
+        background-color: #3cb4ac; }
+        .main__card__div__btn--bookmark {
+          padding: 1.5rem 1.8rem;
+          background-color: #2f2f2f; }
+          .main__card__div__btn--bookmark img {
+            width: 14px;
+            height: 17px; }
+        .main__card__div__btn--project {
+          margin-right: 1rem;
+          font-size: 1.4rem;
+          font-weight: 700; }
+    .main__card--statistics {
+      position: relative;
+      top: calc(23rem + 2.4rem); }
+    .main__card__textValue {
+      margin-top: 3.8rem;
+      font-size: 3rem; }
+    .main__card__textValueTotal {
+      margin-top: 1.4rem;
+      color: #7a7a7a; }

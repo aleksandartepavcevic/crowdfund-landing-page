@@ -6,6 +6,8 @@
 
   &__nav {
     padding-top: 3rem;
+    display: flex;
+    justify-content: space-between;
 
     &--container {
       width: 87.2%;

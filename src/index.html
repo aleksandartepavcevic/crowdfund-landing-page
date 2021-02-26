@@ -14,7 +14,7 @@
   </head>
   <body>
     <header class="header">
-      <nav class="header__nav header__nav--container flex flex-jc-sb flex-ai-c">
+      <nav class="header__nav header__nav--container">
         <img src="images/logo.svg" alt="logo" class="header__nav__logo" />
         <img
           src="images/icon-hamburger.svg"
@@ -24,33 +24,112 @@
       </nav>
     </header>
 
-    <main class="main flex flex-jc-c">
-      <div class="main__card">
+    <main class="main">
+      <div class="main__card main__card--mastercraft">
         <img
           src="images/logo-mastercraft.svg"
           alt="logo"
-          class="main__card__logo"
+          class="main__card--mastercraft__logo"
         />
-        <h1 class="main__card__textMajor">Mastercraft Bamboo Monitor Riser</h1>
-        <p class="main__card__textMinor">
+        <h1 class="main__card--mastercraft__textMajor">
+          Mastercraft Bamboo Monitor Riser
+        </h1>
+        <p class="main__card--mastercraft__textMinor">
           A beautifully handcrafted monitor stand to reduce neck and eye strain.
         </p>
-        <div class="main__card__div">
-          <button class="main__card__div__btn main__card__div__btn--project">
+        <div class="main__card--mastercraft__div">
+          <button class="main__card__btn main__card--mastercraft__btn--project">
             Back this project
           </button>
-          <button class="main__card__div__btn main__card__div__btn--bookmark">
+          <button
+            class="main__card__btn main__card--mastercraft__btn--bookmark"
+          >
             <img src="images/icon-bookmark.svg" alt="icon-bookmark" />
           </button>
         </div>
       </div>
       <div class="main__card main__card--statistics">
-        <h1 class="main__card__textValue">$89,914</h1>
-        <p class="main__card__textValueTotal">of $100,000 backed</p>
-        <h1 class="main__card__textValue">5,007</h1>
-        <p class="main__card__textValueTotal">total backers</p>
-        <h1 class="main__card__textValue">56</h1>
-        <p class="main__card__textValueTotal">days left</p>
+        <div class="main__card__container">
+          <h1 class="main__card--statistics__textValue">$89,914</h1>
+          <p class="main__card--statistics__textValueTotal">
+            of $100,000 backed
+          </p>
+          <h1 class="main__card--statistics__textValue">5,007</h1>
+          <p class="main__card--statistics__textValueTotal">total backers</p>
+          <h1 class="main__card--statistics__textValue">56</h1>
+          <p class="main__card--statistics__textValueTotal">days left</p>
+          <span class="main__card--statistics__statusBar"></span>
+        </div>
+      </div>
+      <div class="main__card main__card--about">
+        <div class="main__card__container">
+          <h1 class="main__card--about__majorText">About this project</h1>
+          <p class="main__card--about__minorText">
+            The Mastercraft Bamboo Monitor Riser is a sturdy and stylish
+            platform that elevates your screen to a more comfortable viewing
+            height. Placing your monitor at eye level has the potential to
+            improve your posture and make you more comfortable while at work,
+            helping you stay focused on tast at hand.
+          </p>
+          <p class="main__card--about__minorText">
+            Featuring artisan craftsmanship, the simplicity of design creates
+            extra desk space below your computer to allow notepads, pens, and
+            USB sticks to be stored under the stand.
+          </p>
+          <div class="main__card--about__innerCards">
+            <div
+              class="main__card main__card--about__innerCards main__card__container--innerCards"
+            >
+              <h1>Bamboo stand</h1>
+              <h2>Pledge $25 or more</h2>
+              <p>
+                You get an ergonomic stand made of natural bamboo. You've helped
+                us launch our promotional campaign, and you'll be added to a
+                special Backer member list.
+              </p>
+              <h1>101 <span>left</span></h1>
+              <button
+                class="main__card__btn main__card--about__innerCards__btn--innerCards"
+              >
+                Select Reward
+              </button>
+            </div>
+            <div
+              class="main__card main__card--about__innerCards main__card__container--innerCards"
+            >
+              <h1>Black Edition Stand</h1>
+              <h2>Pledge $75 or more</h2>
+              <p>
+                You get a Black Special Edition computer stand and a personal
+                thank you. You'll be added to our Backer member list. Shipping
+                is included.
+              </p>
+              <h1>64 <span>left</span></h1>
+              <button
+                class="main__card__btn main__card--about__innerCards__btn--innerCards"
+              >
+                Select Reward
+              </button>
+            </div>
+            <div
+              class="main__card main__card--about__innerCards main__card--about__innerCards--outOfStock main__card__container--innerCards"
+            >
+              <h1>Mahogany Special Edition</h1>
+              <h2>Pledge $200 or more</h2>
+              <p>
+                You get two Special Edition Mahogany stands, a Backer T-Shirt,
+                and a personal thank you. You'll be added to our Backer member
+                list. Shipping is included.
+              </p>
+              <h1>0 <span>left</span></h1>
+              <button
+                class="main__card__btn main__card--about__innerCards__btn--innerCards"
+              >
+                Out of stock
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </body>

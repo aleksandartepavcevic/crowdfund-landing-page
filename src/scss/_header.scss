@@ -1,17 +1,58 @@
+@import "mixins";
+
 .header {
-  padding-bottom: 25rem;
-  background-image: url("../images/image-hero-mobile.jpg");
-  background-size: cover;
+  background-image: url("../images/image-hero-desktop.jpg");
   background-repeat: no-repeat;
+  background-position: center;
+  padding-bottom: 33rem;
 
   &__nav {
-    padding-top: 3rem;
+    padding-top: 5rem;
     display: flex;
     justify-content: space-between;
+  }
 
-    &--container {
-      width: 87.2%;
-      margin: auto;
+  &__menu {
+    height: 15px;
+    display: none;
+
+    @include media(tablet) {
+      display: block;
     }
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+
+    @include media(tablet) {
+      display: none;
+    }
+  }
+
+  &__listMenu {
+    a {
+      color: $white;
+      text-decoration: none;
+      margin-right: 2.5rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:last-of-type {
+      a {
+        margin-right: unset;
+      }
+    }
+  }
+
+  @include media(mobile) {
+    background-image: url("../images/image-hero-mobile.jpg");
+    background-size: cover;
+    padding-bottom: 25rem;
   }
 }

@@ -1,187 +1,228 @@
+@import "mixins";
+
 .main {
-  position: relative;
   display: flex;
   justify-content: center;
 
+  &__content {
+    position: absolute;
+    top: calc(380px - 56px);
+    width: 100%;
+
+    @include media(mobile) {
+      top: calc(300px - 56px);
+    }
+  }
+
   &__card {
-    background-color: $white;
+    border: solid 1px $lightGray;
     border-radius: 10px;
-    border: $lightGray solid 1px;
-    width: 87.2%;
-    text-align: center;
-
-    &__container {
-      padding: 4rem 2.5rem;
-
-      &--innerCards {
-        padding: 2.3rem 2.5rem;
-      }
-    }
-
-    &__btn {
-      text-decoration: none;
-      color: $white;
-      border-radius: 50px;
-      border: none;
-      padding: 1.7rem 4.35rem;
-      background-color: $moderateCyan;
-      outline: 0;
-    }
+    background-color: $white;
 
     &--mastercraft {
-      position: absolute;
-      top: -5.6rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
 
-      &__logo {
-        position: absolute;
-        top: -2.8rem;
-        left: calc(50% - 2.8rem);
+    &--stats {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    &--about {
+      margin-bottom: 5rem;
+    }
+
+    &--innerCard {
+      &:not(:last-of-type) {
+        margin-bottom: 2.5rem;
       }
 
-      &__textMajor {
-        margin: calc(3rem + 2.5rem) auto 0 auto;
-        padding: 0 3rem;
-        text-align: center;
+      &:last-of-type {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    top: -28px;
+    left: calc(50% - 28px);
+  }
+
+  &__heading {
+    padding: 0 0.5rem;
+    margin-bottom: 1.5rem;
+
+    &--stats {
+      padding: unset;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    &--about {
+      padding: unset;
+    }
+
+    &--innerCard {
+      padding: unset;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-left: 1rem;
+        padding-top: 0.5rem;
       }
 
-      &__textMinor {
-        font-size: 1.4rem;
-        color: $gray;
-        margin: 2.8rem auto 0 auto;
-        padding: 0 2.5rem;
+      &:nth-of-type(2) {
+        color: $moderateCyan;
+        font-weight: 500;
+        margin-bottom: 2rem;
       }
 
-      &__div {
-        margin-top: 2.8rem;
-        padding: 0 2.8rem 4rem 2.8rem;
-      }
+      &:last-of-type {
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
 
-      &__btn {
-        &--bookmark {
-          img {
-            padding-top: 4px;
-            width: 14px;
-            height: 18px;
-          }
-
-          padding: 1.5rem 1.8rem;
-          background-color: $darkGray;
-        }
-        &--project {
-          margin-right: 1rem;
+        span {
           font-size: 1.4rem;
-          font-weight: 700;
+          font-weight: 400;
+          color: $gray;
         }
       }
     }
+  }
 
-    &--statistics {
-      position: relative;
-      top: calc(23rem + 2.4rem);
+  &__paragraph {
+    color: $gray;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
 
-      &__textValue:not(:first-of-type) {
-        margin-top: 3.8rem;
-      }
-
-      &__textValue {
-        font-size: 3rem;
-      }
-
-      &__textValueTotal {
-        font-size: 1.4rem;
-        margin-top: 1.4rem;
-        color: $gray;
+    &--stats {
+      &:not(:last-of-type) {
+        margin-bottom: 4rem;
         position: relative;
+
+        &::after {
+          content: "";
+          width: 60px;
+          height: 1px;
+          background-color: $lightGray;
+
+          position: absolute;
+          left: calc(50% - 30px);
+          bottom: -25px;
+        }
       }
 
-      &__textValueTotal::after {
-        content: "";
-        position: absolute;
-        left: calc(50% - 41px);
-        top: 40px;
-        width: 82px;
-        height: 1px;
-        background-color: $lightGray;
-      }
-
-      &__textValueTotal:last-of-type::after {
-        display: none;
-      }
-
-      &__statusBar {
-        display: block;
-        margin: 3.2rem auto 0 auto;
-        height: 12px;
-        border-radius: 25px;
-        background-color: $moderateCyan;
+      &:last-of-type {
+        margin-bottom: 3rem;
       }
     }
 
     &--about {
-      position: absolute;
-      top: calc(23rem + 40.4rem + 2.4rem * 2);
-      text-align: start;
+      line-height: 1.7;
+    }
 
-      &__majorText {
-        margin-bottom: 3rem;
-      }
+    &--innerCard {
+      line-height: 1.7;
+    }
+  }
 
-      &__minorText {
-        margin-bottom: 3.5rem;
-        font-size: 1.4rem;
-        color: $gray;
-        line-height: 24px;
-      }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3.5rem;
+  }
 
-      &__innerCards {
-        width: 100%;
-        text-align: start;
+  &__button {
+    background-color: $moderateCyan;
+    color: $white;
+    font-weight: 700;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
 
-        &:not(:last-of-type) {
-          margin-bottom: 2.4rem;
-        }
+    &:hover {
+      background-color: $darkCyan;
+    }
 
-        h1:first-of-type {
-          font-size: 1.4rem;
-          margin-bottom: 1rem;
-        }
+    &--project {
+      padding: 1.25em 2.5em;
+    }
 
-        h2 {
-          color: $moderateCyan;
-          font-weight: 500;
-          font-size: 1.4rem;
-          margin-bottom: 2.5rem;
-        }
+    &--bookmark {
+      padding: 1.238em 1.392em;
+      background-color: $darkGray;
+      z-index: 10;
+      margin-right: 115px;
 
-        p {
-          color: $gray;
-          font-size: 1.4rem;
-          line-height: 25px;
-          margin-bottom: 2.5rem;
-        }
-
-        h1:last-of-type {
-          font-size: 3.2rem;
-          margin-bottom: 2.5rem;
-
-          span {
-            font-size: 1.4rem;
-            font-weight: 400;
-            color: $gray;
-          }
-        }
-
-        &__btn {
-          &--innerCards {
-            padding: 1.6rem 3.2rem;
-            font-weight: 700;
-          }
-        }
-
-        &--outOfStock {
-          opacity: 50%;
-        }
+      @include media(500px) {
+        margin-right: unset;
       }
     }
+
+    &--innerCard {
+      padding: 1.2em 2.5em;
+    }
+
+    &--outOfStock {
+      padding: 1.2em 2.5em;
+      background-color: $gray;
+
+      &:hover {
+        background-color: $darkGray;
+      }
+    }
+  }
+
+  &__bookmarkWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      button {
+        background-color: $darkCyan;
+      }
+
+      span {
+        color: $darkCyan;
+      }
+    }
+  }
+
+  &__bookmarkIcon {
+    width: 13px;
+    display: flex;
+  }
+
+  &__bookmarkText {
+    color: $gray;
+    position: absolute;
+    z-index: 2;
+    left: 30px;
+    background-color: $lightGray;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 1.25em 2em 1.25em 3em;
+
+    @include media(500px) {
+      display: none;
+    }
+  }
+
+  &__progress {
+    height: 10px;
+    width: 100%;
+    background-color: $moderateCyan;
+    border-radius: 25px;
   }
 }

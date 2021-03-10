@@ -20,6 +20,7 @@
           src="images/icon-hamburger.svg"
           alt="menu-icon"
           class="header__menu"
+          id="btnHamburger"
         />
         <ul class="header__list header__list--desktop">
           <li class="header__listMenu header__listMenu--desktop"><a href="#">About</a></li>
@@ -27,6 +28,16 @@
           <li class="header__listMenu header__listMenu--desktop"><a href="#">Get Started</a></li>
         </ul>
       </nav>
+
+      <div class="header__mobile closed container" id="mobileMenu">
+        <ul class="header__list header__list--mobile">
+          <li class="header__listMenu header__listMenu--mobile"><a href="#">About</a></li>
+          <li class="header__listMenu header__listMenu--mobile"><a href="#">Discover</a></li>
+          <li class="header__listMenu header__listMenu--mobile"><a href="#">Get Started</a></li>
+        </ul>
+      </div>
+
+      <div class="overlay closed"></div>
     </header>
 
     <main class="main">
@@ -48,7 +59,7 @@
             <button class="main__button main__button--project">
               Back this project
             </button>
-            <div class="main__bookmarkWrapper">
+            <div class="main__bookmarkWrapper" id="bookmark">
               <button class="main__button main__button--bookmark">
                 <img
                   src="./images/icon-bookmark.svg"
@@ -56,7 +67,7 @@
                   class="main__bookmarkIcon"
                 />
               </button>
-              <span class="main__bookmarkText">Bookmark</span>
+              <span class="main__bookmarkText" id="bookmarkText">Bookmark</span>
             </div>
           </div>
         </div>
@@ -158,14 +169,6 @@
       </div>
     </main>
 
-    <div class="header__mobile container">
-      <ul class="header__list header__list--mobile">
-        <li class="header__listMenu header__listMenu--mobile"><a href="#">About</a></li>
-        <li class="header__listMenu header__listMenu--mobile"><a href="#">Discover</a></li>
-        <li class="header__listMenu header__listMenu--mobile"><a href="#">Get Started</a></li>
-      </ul>
-    </div>
-
-    <div class="dim"></div>
+    <script src="./index.js"></script>
   </body>
 </html>

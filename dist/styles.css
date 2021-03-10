@@ -1,3 +1,6 @@
+:export {
+  moderateCyan: #3cb4ac; }
+
 * {
   margin: 0;
   padding: 0;
@@ -30,7 +33,12 @@ html {
   .header__nav {
     padding-top: 5rem;
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    position: relative;
+    z-index: 30; }
+    @media only screen and (max-width: 768px) {
+      .header__nav {
+        padding-top: 4rem; } }
   .header__menu {
     height: 15px;
     display: none; }
@@ -42,7 +50,7 @@ html {
     top: 100px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 20;
+    z-index: 30;
     display: flex;
     justify-content: center; }
   .header__list {
@@ -82,6 +90,22 @@ html {
       background-image: url("../images/image-hero-mobile.jpg");
       background-size: cover;
       padding-bottom: 25rem; } }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.308)); }
+
+.open {
+  visibility: visible; }
+
+.closed {
+  visibility: hidden; }
 
 .main {
   display: flex;

@@ -21,10 +21,10 @@
           alt="menu-icon"
           class="header__menu"
         />
-        <ul class="header__list">
-          <li class="header__listMenu"><a href="#">About</a></li>
-          <li class="header__listMenu"><a href="#">Discover</a></li>
-          <li class="header__listMenu"><a href="#">Get Started</a></li>
+        <ul class="header__list header__list--desktop">
+          <li class="header__listMenu header__listMenu--desktop"><a href="#">About</a></li>
+          <li class="header__listMenu header__listMenu--desktop"><a href="#">Discover</a></li>
+          <li class="header__listMenu header__listMenu--desktop"><a href="#">Get Started</a></li>
         </ul>
       </nav>
     </header>
@@ -62,14 +62,24 @@
         </div>
 
         <div class="main__card main__card--stats container container--card">
-          <h1 class="main__heading main__heading--stats">$89,914</h1>
-          <p class="main__paragraph main__paragraph--stats">
-            of $100,000 backed
-          </p>
-          <h1 class="main__heading main__heading--stats">5,007</h1>
-          <p class="main__paragraph main__paragraph--stats">total backers</p>
-          <h1 class="main__heading main__heading--stats">56</h1>
-          <p class="main__paragraph main__paragraph--stats">days left</p>
+          <div class="main__content main__content--stats">
+            <div class="main__content__minor">
+              <h1 class="main__heading main__heading--stats">$89,914</h1>
+              <p class="main__paragraph main__paragraph--stats">
+                of $100,000 backed
+              </p>
+            </div>
+            <div class="main__content__minor">
+              <h1 class="main__heading main__heading--stats">5,007</h1>
+              <p class="main__paragraph main__paragraph--stats">
+                total backers
+              </p>
+            </div>
+            <div class="main__content__minor">
+              <h1 class="main__heading main__heading--stats">56</h1>
+              <p class="main__paragraph main__paragraph--stats main__paragraph--stats-last">days left</p>
+            </div>
+          </div>
           <div class="main__progress"></div>
         </div>
 
@@ -147,5 +157,15 @@
         </div>
       </div>
     </main>
+
+    <div class="header__mobile container">
+      <ul class="header__list header__list--mobile">
+        <li class="header__listMenu header__listMenu--mobile"><a href="#">About</a></li>
+        <li class="header__listMenu header__listMenu--mobile"><a href="#">Discover</a></li>
+        <li class="header__listMenu header__listMenu--mobile"><a href="#">Get Started</a></li>
+      </ul>
+    </div>
+
+    <div class="dim"></div>
   </body>
 </html>

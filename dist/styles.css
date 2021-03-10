@@ -37,22 +37,46 @@ html {
     @media only screen and (max-width: 768px) {
       .header__menu {
         display: block; } }
+  .header__mobile {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 20;
+    display: flex;
+    justify-content: center; }
   .header__list {
     list-style-type: none;
     display: flex; }
     @media only screen and (max-width: 768px) {
-      .header__list {
+      .header__list--desktop {
         display: none; } }
+    .header__list--mobile {
+      width: 100%;
+      flex-direction: column;
+      background-color: white;
+      border: 1px solid rgba(122, 122, 122, 0.205);
+      border-radius: 6px; }
   .header__listMenu a {
     color: #fff;
     text-decoration: none;
-    margin-right: 2.5rem;
     font-size: 1.4rem;
     font-weight: 400; }
-    .header__listMenu a:hover {
+  .header__listMenu--desktop a {
+    margin-right: 2.5rem; }
+    .header__listMenu--desktop a:hover {
       text-decoration: underline; }
-  .header__listMenu:last-of-type a {
+  .header__listMenu--desktop:last-of-type a {
     margin-right: unset; }
+  .header__listMenu--mobile {
+    padding: 2rem 1.5rem; }
+    .header__listMenu--mobile a {
+      margin-right: 0;
+      color: black;
+      font-weight: 500;
+      font-size: 1.6rem; }
+    .header__listMenu--mobile:not(:last-of-type) {
+      border-bottom: 1px solid rgba(122, 122, 122, 0.205); }
   @media only screen and (max-width: 375px) {
     .header {
       background-image: url("../images/image-hero-mobile.jpg");
@@ -69,6 +93,21 @@ html {
     @media only screen and (max-width: 375px) {
       .main__content {
         top: calc(300px - 56px); } }
+    .main__content--stats {
+      position: unset;
+      display: flex;
+      text-align: left; }
+      @media only screen and (max-width: 600px) {
+        .main__content--stats {
+          flex-direction: column;
+          text-align: center; } }
+    .main__content__minor {
+      flex-direction: column; }
+      .main__content__minor:not(:last-of-type) {
+        margin-right: 10rem; }
+        @media only screen and (max-width: 600px) {
+          .main__content__minor:not(:last-of-type) {
+            margin-right: 0; } }
   .main__card {
     border: solid 1px rgba(122, 122, 122, 0.205);
     border-radius: 10px;
@@ -77,7 +116,6 @@ html {
       text-align: center;
       margin-bottom: 2.5rem; }
     .main__card--stats {
-      text-align: center;
       margin-bottom: 2.5rem; }
     .main__card--about {
       margin-bottom: 5rem; }
@@ -111,10 +149,10 @@ html {
         color: #3cb4ac;
         font-weight: 500;
         margin-bottom: 2rem; }
-      .main__heading--innerCard:last-of-type {
+      .main__heading--innerCard:nth-of-type(3) {
         font-size: 3rem;
         margin-bottom: 2.5rem; }
-        .main__heading--innerCard:last-of-type span {
+        .main__heading--innerCard:nth-of-type(3) span {
           font-size: 1.4rem;
           font-weight: 400;
           color: #7a7a7a; }
@@ -122,19 +160,30 @@ html {
     color: #7a7a7a;
     font-size: 1.4rem;
     margin-bottom: 1.5rem; }
-    .main__paragraph--stats:not(:last-of-type) {
+    .main__paragraph--stats {
       margin-bottom: 4rem;
       position: relative; }
-      .main__paragraph--stats:not(:last-of-type)::after {
+      .main__paragraph--stats::after {
         content: "";
-        width: 60px;
-        height: 1px;
+        width: 1px;
+        height: 60px;
         background-color: rgba(122, 122, 122, 0.205);
         position: absolute;
-        left: calc(50% - 30px);
-        bottom: -25px; }
-    .main__paragraph--stats:last-of-type {
-      margin-bottom: 3rem; }
+        bottom: 0;
+        right: -50px; }
+        @media only screen and (max-width: 600px) {
+          .main__paragraph--stats::after {
+            content: "";
+            width: 60px;
+            height: 1px;
+            background-color: rgba(122, 122, 122, 0.205);
+            position: absolute;
+            left: calc(50% - 30px);
+            bottom: -25px; } }
+      .main__paragraph--stats-last {
+        margin-bottom: 3rem; }
+        .main__paragraph--stats-last::after {
+          display: none; }
     .main__paragraph--about {
       line-height: 1.7; }
     .main__paragraph--innerCard {
@@ -161,6 +210,8 @@ html {
       background-color: #2f2f2f;
       z-index: 10;
       margin-right: 115px; }
+      .main__button--bookmark:hover {
+        background-color: #2f2f2f; }
       @media only screen and (max-width: 500px) {
         .main__button--bookmark {
           margin-right: unset; } }
@@ -176,10 +227,6 @@ html {
     display: flex;
     align-items: center;
     cursor: pointer; }
-    .main__bookmarkWrapper:hover button {
-      background-color: #147b74; }
-    .main__bookmarkWrapper:hover span {
-      color: #147b74; }
   .main__bookmarkIcon {
     width: 13px;
     display: flex; }

@@ -12,6 +12,29 @@
     @include media(mobile) {
       top: calc(300px - 56px);
     }
+
+    &--stats {
+      position: unset;
+      display: flex;
+      text-align: left;
+
+      @include media(600px) {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    &__minor {
+      flex-direction: column;
+
+      &:not(:last-of-type) {
+        margin-right: 10rem;
+
+        @include media(600px) {
+          margin-right: 0;
+        }
+      }
+    }
   }
 
   &__card {
@@ -25,7 +48,6 @@
     }
 
     &--stats {
-      text-align: center;
       margin-bottom: 2.5rem;
     }
 
@@ -82,7 +104,7 @@
         margin-bottom: 2rem;
       }
 
-      &:last-of-type {
+      &:nth-of-type(3) {
         font-size: 3rem;
         margin-bottom: 2.5rem;
 
@@ -101,24 +123,35 @@
     margin-bottom: 1.5rem;
 
     &--stats {
-      &:not(:last-of-type) {
-        margin-bottom: 4rem;
-        position: relative;
+      margin-bottom: 4rem;
+      position: relative;
 
-        &::after {
+      &::after {
+        content: "";
+        width: 1px;
+        height: 60px;
+        background-color: $lightGray;
+        position: absolute;
+        bottom: 0;
+        right: -50px;
+
+        @include media(600px) {
           content: "";
           width: 60px;
           height: 1px;
           background-color: $lightGray;
-
           position: absolute;
           left: calc(50% - 30px);
           bottom: -25px;
         }
       }
 
-      &:last-of-type {
+      &-last {
         margin-bottom: 3rem;
+
+        &::after {
+          display: none;
+        }
       }
     }
 
@@ -161,6 +194,10 @@
       z-index: 10;
       margin-right: 115px;
 
+      &:hover {
+        background-color: $darkGray;
+      }
+
       @include media(500px) {
         margin-right: unset;
       }
@@ -186,15 +223,15 @@
     align-items: center;
     cursor: pointer;
 
-    &:hover {
-      button {
-        background-color: $darkCyan;
-      }
+    // &:hover {
+    //   button {
+    //     background-color: $darkCyan;
+    //   }
 
-      span {
-        color: $darkCyan;
-      }
-    }
+    //   span {
+    //     color: $darkCyan;
+    //   }
+    // }
   }
 
   &__bookmarkIcon {

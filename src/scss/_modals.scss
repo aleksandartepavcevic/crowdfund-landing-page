@@ -73,7 +73,16 @@
     }
   }
 
-  &--pledge {
+  &__pledge {
+    flex: 1;
+    margin-left: 2rem;
+  }
+
+  &__pledge-input {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    border-top: 1px solid $lightGray;
   }
 }
 

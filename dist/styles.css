@@ -164,6 +164,9 @@ html {
     .main__heading--modal {
       padding: 0;
       margin-bottom: 0; }
+    .main__heading--modal-inner {
+      padding: 0;
+      font-size: 1.4rem; }
   .main__paragraph {
     color: #7a7a7a;
     font-size: 1.4rem;
@@ -320,6 +323,14 @@ html {
     transform: translate(-50%, -50%); }
     .modal--thank-you img {
       margin-bottom: 1.5rem; }
+  .modal__pledge {
+    flex: 1;
+    margin-left: 2rem; }
+  .modal__pledge-input {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(122, 122, 122, 0.205); }
 
 .open {
   visibility: visible; }

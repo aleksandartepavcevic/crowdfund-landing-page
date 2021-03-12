@@ -113,6 +113,11 @@
         }
       }
     }
+
+    &--modal {
+      padding: 0;
+      margin-bottom: 0;
+    }
   }
 
   &__paragraph {
@@ -213,6 +218,10 @@
         background-color: $darkGray;
       }
     }
+
+    &--thank-you {
+      padding: 1em 2em;
+    }
   }
 
   &__bookmarkWrapper {
@@ -220,16 +229,6 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-
-    // &:hover {
-    //   button {
-    //     background-color: $darkCyan;
-    //   }
-
-    //   span {
-    //     color: $darkCyan;
-    //   }
-    // }
   }
 
   &__bookmarkIcon {
@@ -255,9 +254,14 @@
   }
 
   &__progress {
-    height: 10px;
     width: 100%;
-    background-color: $moderateCyan;
+    background-color: $lightGray;
     border-radius: 25px;
+  }
+
+  &__bar {
+    height: 10px;
+    border-radius: 25px;
+    background-color: $moderateCyan;
   }
 }

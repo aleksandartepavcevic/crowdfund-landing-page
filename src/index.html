@@ -23,21 +23,31 @@
           id="btnHamburger"
         />
         <ul class="header__list header__list--desktop">
-          <li class="header__listMenu header__listMenu--desktop"><a href="#">About</a></li>
-          <li class="header__listMenu header__listMenu--desktop"><a href="#">Discover</a></li>
-          <li class="header__listMenu header__listMenu--desktop"><a href="#">Get Started</a></li>
+          <li class="header__listMenu header__listMenu--desktop">
+            <a href="#">About</a>
+          </li>
+          <li class="header__listMenu header__listMenu--desktop">
+            <a href="#">Discover</a>
+          </li>
+          <li class="header__listMenu header__listMenu--desktop">
+            <a href="#">Get Started</a>
+          </li>
         </ul>
       </nav>
 
       <div class="header__mobile closed container" id="mobileMenu">
         <ul class="header__list header__list--mobile">
-          <li class="header__listMenu header__listMenu--mobile"><a href="#">About</a></li>
-          <li class="header__listMenu header__listMenu--mobile"><a href="#">Discover</a></li>
-          <li class="header__listMenu header__listMenu--mobile"><a href="#">Get Started</a></li>
+          <li class="header__listMenu header__listMenu--mobile">
+            <a href="#">About</a>
+          </li>
+          <li class="header__listMenu header__listMenu--mobile">
+            <a href="#">Discover</a>
+          </li>
+          <li class="header__listMenu header__listMenu--mobile">
+            <a href="#">Get Started</a>
+          </li>
         </ul>
       </div>
-
-      <div class="overlay closed"></div>
     </header>
 
     <main class="main">
@@ -60,12 +70,22 @@
               Back this project
             </button>
             <div class="main__bookmarkWrapper" id="bookmark">
-              <button class="main__button main__button--bookmark">
-                <img
-                  src="./images/icon-bookmark.svg"
-                  alt="icon-bookmark"
+              <button
+                class="main__button main__button--bookmark"
+                id="bookmarkIcon"
+              >
+                <svg
                   class="main__bookmarkIcon"
-                />
+                  viewBox="0 0 384 512"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    id="bookmarkIconPath"
+                    d="M0 512V48C0 21.49 21.49 0 48 0H336C362.51 0 384 21.49 384 48V512L192 400L0 512Z"
+                    fill="#B1B1B1"
+                  />
+                </svg>
               </button>
               <span class="main__bookmarkText" id="bookmarkText">Bookmark</span>
             </div>
@@ -75,7 +95,9 @@
         <div class="main__card main__card--stats container container--card">
           <div class="main__content main__content--stats">
             <div class="main__content__minor">
-              <h1 class="main__heading main__heading--stats">$89,914</h1>
+              <h1 class="main__heading main__heading--stats" id="backedValue">
+                $89,914
+              </h1>
               <p class="main__paragraph main__paragraph--stats">
                 of $100,000 backed
               </p>
@@ -88,10 +110,16 @@
             </div>
             <div class="main__content__minor">
               <h1 class="main__heading main__heading--stats">56</h1>
-              <p class="main__paragraph main__paragraph--stats main__paragraph--stats-last">days left</p>
+              <p
+                class="main__paragraph main__paragraph--stats main__paragraph--stats-last"
+              >
+                days left
+              </p>
             </div>
           </div>
-          <div class="main__progress"></div>
+          <div class="main__progress">
+            <div class="main__bar" id="progressBar"></div>
+          </div>
         </div>
 
         <div class="main__card main__card--about container container--card">
@@ -168,6 +196,59 @@
         </div>
       </div>
     </main>
+
+    <!-- Modals -->
+    <!-- Overlay modal -->
+    <div class="overlay closed"></div>
+
+    <!-- Thank you modal -->
+    <div class="modal modal--thank-you container container--innerCard closed">
+      <img src="./images/icon-check.svg" alt="icon-check" />
+      <h1 class="main__heading">Thanks for your support!</h1>
+      <p class="main__paragraph main__paragraph--innerCard">
+        Your pledge brings us one step closer to sharing Mastercraft Bamboo
+        Monitor Riser worldwide. You will get an email once our campaign is
+        completed.
+      </p>
+      <button class="main__button main__button--thank-you">Got it!</button>
+    </div>
+
+    <!-- Pledge modal -->
+    <div class="modal__content container container--main closed">
+      <div class="modal container container--card">
+        <div class="modal__header">
+          <h1 class="main__heading main__heading--modal">Back this project</h1>
+          <img src="./images/icon-close-modal.svg" alt="icon-close-modal" />
+        </div>
+        <p class="main__paragraph main__paragraph--innerCard">
+          Want to support us in bringing Mastercraft Bamboo Monitor Riser out in
+          the world?
+        </p>
+
+        <!-- Pledge modal with no reward -->
+        <div class="modal container--innerCard">
+          <div class="modal__content--innerCard">
+            <div class="modal__circle">
+              <div class="modal__circle modal__circle--inner"></div>
+            </div>
+            <div class="modal__pledge">
+              <h1 class="main__heading main__heading--modal-inner">Pledge with no reward</h1>
+              <p class="main__paragraph">Choose to support us without a reward if you simply believe in our project.
+                As a backer, you will be signed up to receive product updates via email.</p>
+            </div>
+          </div>
+          <div class="modal__pledge-input">
+            <p class="main__paragraph">Enter your pledge</p>
+            <form action="">
+              <span class="modal__input">
+                  <input required type="number" min="0.01" step="0.01">
+              </span>
+              <button class="main__button">Continue</button>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="./index.js"></script>
   </body>

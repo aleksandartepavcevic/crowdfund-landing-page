@@ -100,22 +100,3 @@
     padding-bottom: 25rem;
   }
 }
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 20;
-  height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.308));
-}
-
-.open {
-  visibility: visible;
-}
-
-.closed {
-  visibility: hidden;
-}

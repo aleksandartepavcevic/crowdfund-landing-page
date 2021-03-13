@@ -15,6 +15,7 @@
   background-color: $white;
 
   &__content {
+    width: 100%;
     position: absolute;
     z-index: 50;
     top: 50%;
@@ -81,7 +82,8 @@
   &__pledge-input {
     display: flex;
     justify-content: space-between;
-    padding-top: 1.5rem;
+    align-items: center;
+    padding-top: 2.4rem;
     border-top: 1px solid $lightGray;
   }
 }

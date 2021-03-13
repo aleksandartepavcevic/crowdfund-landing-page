@@ -199,6 +199,8 @@ html {
       line-height: 1.7; }
     .main__paragraph--innerCard {
       line-height: 1.7; }
+    .main__paragraph--pledge-input {
+      margin-bottom: 0; }
   .main__buttons {
     display: flex;
     justify-content: space-between;
@@ -234,6 +236,8 @@ html {
       .main__button--outOfStock:hover {
         background-color: #2f2f2f; }
     .main__button--thank-you {
+      padding: 1em 2em; }
+    .main__button--input {
       padding: 1em 2em; }
   .main__bookmarkWrapper {
     position: relative;
@@ -281,6 +285,7 @@ html {
   border-radius: 10px;
   background-color: #fff; }
   .modal__content {
+    width: 100%;
     position: absolute;
     z-index: 50;
     top: 50%;
@@ -329,7 +334,8 @@ html {
   .modal__pledge-input {
     display: flex;
     justify-content: space-between;
-    padding-top: 1.5rem;
+    align-items: center;
+    padding-top: 2.4rem;
     border-top: 1px solid rgba(122, 122, 122, 0.205); }
 
 .open {

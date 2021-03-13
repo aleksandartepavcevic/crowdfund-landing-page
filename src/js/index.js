@@ -7,6 +7,8 @@ const bookmarkIcon = document.getElementById('bookmarkIcon');
 const bookmarkIconPath = document.getElementById('bookmarkIconPath');
 const progressBar = document.getElementById('progressBar');
 const backedValue = document.getElementById('backedValue');
+const circle = document.getElementById('circle');
+const modal = document.querySelector('.modal');
 
 
 // Mobile menu
@@ -19,6 +21,11 @@ btnHamburger.addEventListener('click', () => {
         overlay.classList.replace('closed', 'open');
     }
 });
+
+// Modal active
+circle.addEventListener('click', () => {
+    modal.classList.add('active');
+})
 
 
 // Bookmark click animation

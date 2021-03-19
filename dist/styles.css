@@ -288,6 +288,7 @@ html {
   .modal:not(:last-of-type) {
     margin-bottom: 2rem; }
   .modal__content {
+    display: none;
     width: 100%;
     position: absolute;
     z-index: 50;

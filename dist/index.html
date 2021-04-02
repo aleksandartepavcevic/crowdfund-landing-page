@@ -35,7 +35,7 @@
         </ul>
       </nav>
 
-      <div class="header__mobile closed container" id="mobileMenu">
+      <div class="header__mobile container" id="mobileMenu">
         <ul class="header__list header__list--mobile">
           <li class="header__listMenu header__listMenu--mobile">
             <a href="#">About</a>
@@ -66,7 +66,10 @@
             strain.
           </p>
           <div class="main__buttons">
-            <button class="main__button main__button--project">
+            <button
+              class="main__button main__button--project"
+              id="select-reward-cta"
+            >
               Back this project
             </button>
             <div class="main__bookmarkWrapper" id="bookmark">
@@ -149,7 +152,10 @@
             <h1 class="main__heading main__heading--innerCard">
               101 <span>left</span>
             </h1>
-            <button class="main__button main__button--innerCard">
+            <button
+              class="main__button main__button--innerCard"
+              id="select-reward-cta"
+            >
               Select Reward
             </button>
           </div>
@@ -202,7 +208,7 @@
     <div class="overlay closed"></div>
 
     <!-- Thank you modal -->
-    <div class="modal modal--thank-you container container--innerCard closed">
+    <div class="modal modal--thank-you container container--innerCard">
       <img src="./images/icon-check.svg" alt="icon-check" />
       <h1 class="main__heading">Thanks for your support!</h1>
       <p class="main__paragraph main__paragraph--innerCard">
@@ -214,11 +220,15 @@
     </div>
 
     <!-- Pledge modal -->
-    <div class="modal__content container container--main">
+    <div class="modal__content container container--main" id="modal">
       <div class="modal container container--card">
         <div class="modal__header">
           <h1 class="main__heading main__heading--modal">Back this project</h1>
-          <img src="./images/icon-close-modal.svg" alt="icon-close-modal" />
+          <img
+            src="./images/icon-close-modal.svg"
+            alt="icon-close-modal"
+            id="modal-exit"
+          />
         </div>
         <p class="main__paragraph main__paragraph--innerCard">
           Want to support us in bringing Mastercraft Bamboo Monitor Riser out in
@@ -228,51 +238,155 @@
         <!-- Pledge modal with no reward -->
         <div class="modal container--innerCard">
           <div class="modal__content--innerCard">
-            <label class="">
-              <input type="radio" name="radio">
+            <label class="modal__checkmark" id="checkmark-basic">
+              <input type="radio" name="radio" />
               <span class="checkmark"></span>
             </label>
             <div class="modal__pledge">
-              <h1 class="main__heading main__heading--modal-inner">Pledge with no reward</h1>
-              <p class="main__paragraph main__paragraph--innerCard">Choose to support us without a reward if you simply believe in our project.
-                As a backer, you will be signed up to receive product updates via email.</p>
+              <h1 class="main__heading main__heading--modal-inner">
+                Pledge with no reward
+              </h1>
+              <p class="main__paragraph main__paragraph--innerCard">
+                Choose to support us without a reward if you simply believe in
+                our project. As a backer, you will be signed up to receive
+                product updates via email.
+              </p>
             </div>
           </div>
-          <div class="modal__pledge-input">
-            <p class="main__paragraph main__paragraph--pledge-input">Enter your pledge</p>
+          <div class="modal__pledge-input" id="modal-pledge-basic">
+            <p class="main__paragraph main__paragraph--pledge-input">
+              Enter your pledge
+            </p>
             <form action="">
               <span class="modal__input">
-                  <input required type="number" min="1" step="1">
+                <input required type="number" min="1" step="1" />
               </span>
               <button class="main__button main__button--input">Continue</button>
-          </form>
+            </form>
           </div>
         </div>
 
         <!-- Bamboo stand modal -->
-        <div class="modal container--innerCard ">
+        <div class="modal container--innerCard">
           <div class="modal__content--innerCard">
-            <div class="modal__circle" >
-              <div class="modal__circle-inner" id="circle"></div>
-            </div>
+            <label class="modal__checkmark" id="checkmark-bamboo">
+              <input type="radio" name="radio" />
+              <span class="checkmark"></span>
+            </label>
             <div class="modal__pledge">
               <div class="modal__pledge-header">
-                <h1 class="main__heading main__heading--modal-inner">Bamboo Stand <span>Pledge $25 or more</span></h1>
-                <h1 class="main__heading main__heading--innerCard">
+                <h1 class="main__heading main__heading--modal-inner">
+                  Bamboo Stand <span>Pledge $25 or more</span>
+                </h1>
+                <h1 class="main__heading main__heading--modal-innerCard">
+                  101 <span>left</span>
+                </h1>
+              </div>
+              <p class="main__paragraph main__paragraph--innerCard">
+                You get an ergonomic stand made of natural bamboo. You've helped
+                us launch our promotional campaign, and you'll be added to a
+                special Backer member list.
+              </p>
+            </div>
+          </div>
+          <div class="modal__pledge-input" id="modal-pledge-bamboo">
+            <p class="main__paragraph main__paragraph--pledge-input">
+              Enter your pledge
+            </p>
+            <form action="">
+              <span class="modal__input">
+                <input
+                  required
+                  type="number"
+                  min="25"
+                  step="1"
+                  placeholder="25"
+                />
+              </span>
+              <button class="main__button main__button--input">Continue</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="modal container--innerCard">
+          <div class="modal__content--innerCard">
+            <label class="modal__checkmark" id="checkmark-black">
+              <input type="radio" name="radio" />
+              <span class="checkmark"></span>
+            </label>
+            <div class="modal__pledge">
+              <div class="modal__pledge-header">
+                <h1 class="main__heading main__heading--modal-inner">
+                  Black Edition <span>Pledge $75 or more</span>
+                </h1>
+                <h1 class="main__heading main__heading--modal-innerCard">
                   64 <span>left</span>
                 </h1>
               </div>
-              <p class="main__paragraph main__paragraph--innerCard">You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you'll be added to a special Backer member list.</p>
+              <p class="main__paragraph main__paragraph--innerCard">
+                You get a Black Special Edition computer stand and a personal
+                thank you. You'll be added to our Backer member list. Shipping
+                is included.
+              </p>
             </div>
           </div>
-          <div class="modal__pledge-input">
-            <p class="main__paragraph main__paragraph--pledge-input">Enter your pledge</p>
+          <div class="modal__pledge-input" id="modal-pledge-black">
+            <p class="main__paragraph main__paragraph--pledge-input">
+              Enter your pledge
+            </p>
             <form action="">
               <span class="modal__input">
-                  <input required type="number" min="25" step="1" placeholder="25">
+                <input
+                  required
+                  type="number"
+                  min="75"
+                  step="1"
+                  placeholder="75"
+                />
               </span>
               <button class="main__button main__button--input">Continue</button>
-          </form>
+            </form>
+          </div>
+        </div>
+
+        <div class="modal container--innerCard">
+          <div class="modal__content--innerCard">
+            <label class="modal__checkmark" id="checkmark-mahogany">
+              <input type="radio" name="radio" />
+              <span class="checkmark"></span>
+            </label>
+            <div class="modal__pledge">
+              <div class="modal__pledge-header">
+                <h1 class="main__heading main__heading--modal-inner">
+                  Mahogany Special Edition <span>Pledge $200 or more</span>
+                </h1>
+                <h1 class="main__heading main__heading--modal-innerCard">
+                  0 <span>left</span>
+                </h1>
+              </div>
+              <p class="main__paragraph main__paragraph--innerCard">
+                You get two Special Edition Mahogany stands, a Backer T-Shirt,
+                and a personal thank you. You'll be added to our Backer member
+                list. Shipping included.
+              </p>
+            </div>
+          </div>
+          <div class="modal__pledge-input" id="modal-pledge-mahogany">
+            <p class="main__paragraph main__paragraph--pledge-input">
+              Enter your pledge
+            </p>
+            <form action="">
+              <span class="modal__input">
+                <input
+                  required
+                  type="number"
+                  min="200"
+                  step="1"
+                  placeholder="200"
+                />
+              </span>
+              <button class="main__button main__button--input">Continue</button>
+            </form>
           </div>
         </div>
       </div>

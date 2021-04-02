@@ -1,5 +1,5 @@
 .header {
-  background-image: url("../images/image-hero-desktop.jpg");
+  background-image: url('../images/image-hero-desktop.jpg');
   background-repeat: no-repeat;
   background-position: center;
   padding-bottom: 33rem;
@@ -33,6 +33,7 @@
     z-index: 30;
     display: flex;
     justify-content: center;
+    visibility: hidden;
   }
 
   &__list {
@@ -95,7 +96,7 @@
   }
 
   @include media(mobile) {
-    background-image: url("../images/image-hero-mobile.jpg");
+    background-image: url('../images/image-hero-mobile.jpg');
     background-size: cover;
     padding-bottom: 25rem;
   }

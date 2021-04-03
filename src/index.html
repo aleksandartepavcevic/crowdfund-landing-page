@@ -154,7 +154,7 @@
             </h1>
             <button
               class="main__button main__button--innerCard"
-              id="select-reward-cta"
+              id="bamboo-pledge-cta"
             >
               Select Reward
             </button>
@@ -175,7 +175,10 @@
             <h1 class="main__heading main__heading--innerCard">
               64 <span>left</span>
             </h1>
-            <button class="main__button main__button--innerCard">
+            <button
+              class="main__button main__button--innerCard"
+              id="black-pledge-cta"
+            >
               Select Reward
             </button>
           </div>
@@ -195,7 +198,10 @@
             <h1 class="main__heading main__heading--innerCard">
               0 <span>left</span>
             </h1>
-            <button class="main__button main__button--outOfStock">
+            <button
+              class="main__button main__button--outOfStock"
+              id="mahogany-pledge-cta"
+            >
               Out of Stock
             </button>
           </div>
@@ -236,12 +242,11 @@
         </p>
 
         <!-- Pledge modal with no reward -->
-        <div class="modal container--innerCard">
+        <div class="modal container--innerCard" id="modal-basic">
           <div class="modal__content--innerCard">
-            <label class="modal__checkmark" id="checkmark-basic">
-              <input type="radio" name="radio" />
-              <span class="checkmark"></span>
-            </label>
+            <div class="modal__circle" id="checkmark-basic">
+              <div class="modal__circle-inner"></div>
+            </div>
             <div class="modal__pledge">
               <h1 class="main__heading main__heading--modal-inner">
                 Pledge with no reward
@@ -267,12 +272,11 @@
         </div>
 
         <!-- Bamboo stand modal -->
-        <div class="modal container--innerCard">
+        <div class="modal container--innerCard" id="modal-bamboo">
           <div class="modal__content--innerCard">
-            <label class="modal__checkmark" id="checkmark-bamboo">
-              <input type="radio" name="radio" />
-              <span class="checkmark"></span>
-            </label>
+            <div class="modal__circle" id="checkmark-bamboo">
+              <div class="modal__circle-inner"></div>
+            </div>
             <div class="modal__pledge">
               <div class="modal__pledge-header">
                 <h1 class="main__heading main__heading--modal-inner">
@@ -308,12 +312,12 @@
           </div>
         </div>
 
-        <div class="modal container--innerCard">
+        <!-- Black stand modal -->
+        <div class="modal container--innerCard" id="modal-black">
           <div class="modal__content--innerCard">
-            <label class="modal__checkmark" id="checkmark-black">
-              <input type="radio" name="radio" />
-              <span class="checkmark"></span>
-            </label>
+            <div class="modal__circle" id="checkmark-black">
+              <div class="modal__circle-inner"></div>
+            </div>
             <div class="modal__pledge">
               <div class="modal__pledge-header">
                 <h1 class="main__heading main__heading--modal-inner">
@@ -349,12 +353,12 @@
           </div>
         </div>
 
-        <div class="modal container--innerCard">
+        <!-- Mahogany stand modal -->
+        <div class="modal container--innerCard" id="modal-mahogany">
           <div class="modal__content--innerCard">
-            <label class="modal__checkmark" id="checkmark-mahogany">
-              <input type="radio" name="radio" />
-              <span class="checkmark"></span>
-            </label>
+            <div class="modal__circle" id="checkmark-mahogany">
+              <div class="modal__circle-inner"></div>
+            </div>
             <div class="modal__pledge">
               <div class="modal__pledge-header">
                 <h1 class="main__heading main__heading--modal-inner">
@@ -375,17 +379,23 @@
             <p class="main__paragraph main__paragraph--pledge-input">
               Enter your pledge
             </p>
-            <form action="">
+            <form>
               <span class="modal__input">
                 <input
                   required
                   type="number"
+                  name="amount"
                   min="200"
                   step="1"
                   placeholder="200"
+                  id="input-box"
                 />
               </span>
-              <button class="main__button main__button--input">Continue</button>
+              <input
+                type="submit"
+                value="Continue"
+                class="main__button main__button--input"
+              />
             </form>
           </div>
         </div>

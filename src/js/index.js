@@ -10,20 +10,36 @@ const backedValue = document.getElementById('backedValue');
 const modalExit = document.getElementById('modal-exit');
 const modal = document.getElementById('modal');
 const selectRewardCta = document.getElementById('select-reward-cta');
-const checkmarkBasic = document.getElementById('checkmark-basic');
+const checkmarkBasic = document.getElementById('modal-basic');
 const modalPledgeBasic = document.getElementById('modal-pledge-basic');
-const checkmarkBamboo = document.getElementById('checkmark-bamboo');
+const checkmarkBamboo = document.getElementById('modal-bamboo');
 const modalPledgeBamboo = document.getElementById('modal-pledge-bamboo');
-const checkmarkBlack = document.getElementById('checkmark-black');
+const checkmarkBlack = document.getElementById('modal-black');
 const modalPledgeBlack = document.getElementById('modal-pledge-black');
-const checkmarkMahogany = document.getElementById('checkmark-mahogany');
+const checkmarkMahogany = document.getElementById('modal-mahogany');
 const modalPledgeMahogany = document.getElementById('modal-pledge-mahogany');
+const bambooCta = document.getElementById('bamboo-pledge-cta');
+const blackCta = document.getElementById('black-pledge-cta');
+const mahoganyCta = document.getElementById('mahogany-pledge-cta');
+const input = document.getElementById('input-box');
 
 const modals = [
-  modalPledgeBasic,
-  modalPledgeBamboo,
-  modalPledgeBlack,
-  modalPledgeMahogany,
+  {
+    name: 'basic',
+    checkmarkActivated: 'false',
+  },
+  {
+    name: 'bamboo',
+    checkmarkActivated: 'false',
+  },
+  {
+    name: 'black',
+    checkmarkActivated: 'false',
+  },
+  {
+    name: 'mahogany',
+    checkmarkActivated: 'false',
+  },
 ];
 
 // Mobile menu
@@ -31,60 +47,116 @@ btnHamburger.addEventListener('click', () => {
   mobileMenu.classList.toggle('open');
   overlay.classList.toggle('open');
 });
+
 // Modal open
-selectRewardCta.addEventListener('click', () => {
+const modalOpen = () => {
+  checkIfItsActive();
   modal.classList.toggle('open');
   overlay.classList.toggle('open');
-});
+};
 
 // Modal closed
 modalExit.addEventListener('click', () => {
+  checkIfItsActive();
   modal.classList.toggle('open');
   overlay.classList.toggle('open');
 });
 
-checkmarkBasic.addEventListener('click', () => {
+const checkmarkActive = (checkmark) => {
+  checkmark.classList.toggle('active');
+};
+
+const pledgeOpen = (pledge) => {
+  pledge.classList.toggle('pledge-open');
+};
+
+const checkIfItsActive = () => {
   modals.forEach((element) => {
-    if (element.classList.contains('checked')) {
-      element.classList.toggle('pledge-open');
-      element.classList.toggle('checked');
+    if (element.checkmarkActivated == 'true') {
+      switch (element.name) {
+        case 'basic':
+          checkmarkActive(checkmarkBasic);
+          pledgeOpen(modalPledgeBasic);
+          break;
+
+        case 'bamboo':
+          checkmarkActive(checkmarkBamboo);
+          pledgeOpen(modalPledgeBamboo);
+          break;
+
+        case 'black':
+          checkmarkActive(checkmarkBlack);
+          pledgeOpen(modalPledgeBlack);
+          break;
+
+        case 'mahogany':
+          checkmarkActive(checkmarkMahogany);
+          pledgeOpen(modalPledgeMahogany);
+          break;
+      }
+      element.checkmarkActivated = 'false';
     }
   });
-  modalPledgeBasic.classList.toggle('pledge-open');
-  modals[0].classList.toggle('checked');
+};
+
+checkmarkBasic.addEventListener('click', () => {
+  checkIfItsActive();
+
+  checkmarkActive(checkmarkBasic);
+  pledgeOpen(modalPledgeBasic);
+  modals[0].checkmarkActivated = 'true';
 });
 
 checkmarkBamboo.addEventListener('click', () => {
-  modals.forEach((element) => {
-    if (element.classList.contains('checked')) {
-      element.classList.toggle('pledge-open');
-      element.classList.toggle('checked');
-    }
-  });
-  modalPledgeBamboo.classList.toggle('pledge-open');
-  modals[1].classList.toggle('checked');
+  checkIfItsActive();
+
+  checkmarkActive(checkmarkBamboo);
+  pledgeOpen(modalPledgeBamboo);
+  modals[1].checkmarkActivated = 'true';
 });
 
 checkmarkBlack.addEventListener('click', () => {
-  modals.forEach((element) => {
-    if (element.classList.contains('checked')) {
-      element.classList.toggle('pledge-open');
-      element.classList.toggle('checked');
-    }
-  });
-  modalPledgeBlack.classList.toggle('pledge-open');
-  modals[2].classList.toggle('checked');
+  checkIfItsActive();
+
+  checkmarkActive(checkmarkBlack);
+  pledgeOpen(modalPledgeBlack);
+  modals[2].checkmarkActivated = 'true';
 });
 
 checkmarkMahogany.addEventListener('click', () => {
-  modals.forEach((element) => {
-    if (element.classList.contains('checked')) {
-      element.classList.toggle('pledge-open');
-      element.classList.toggle('checked');
-    }
-  });
-  modalPledgeMahogany.classList.toggle('pledge-open');
-  modals[3].classList.toggle('checked');
+  checkIfItsActive();
+
+  checkmarkActive(checkmarkMahogany);
+  pledgeOpen(modalPledgeMahogany);
+  modals[3].checkmarkActivated = 'true';
+});
+
+selectRewardCta.addEventListener('click', () => {
+  modalOpen();
+});
+
+bambooCta.addEventListener('click', () => {
+  modalOpen();
+
+  checkmarkActive(checkmarkBamboo);
+  pledgeOpen(modalPledgeBamboo);
+  modals[1].checkmarkActivated = 'true';
+});
+
+blackCta.addEventListener('click', () => {
+  modalOpen();
+
+  checkmarkActive(checkmarkBlack);
+  pledgeOpen(modalPledgeBlack);
+  modals[2].checkmarkActivated = 'true';
+});
+
+mahoganyCta.addEventListener('click', () => {
+  modalOpen();
+
+  checkmarkActive(checkmarkMahogany);
+  pledgeOpen(modalPledgeMahogany);
+  modals[3].checkmarkActivated = 'true';
 });
 
 // Bookmark click animation

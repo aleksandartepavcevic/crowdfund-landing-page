@@ -322,10 +322,10 @@ body {
       cursor: pointer; }
   .modal__circle {
     flex: 1;
-    max-width: 20px;
-    max-height: 20px;
-    width: 20px;
-    height: 20px;
+    max-width: 15px;
+    max-height: 15px;
+    width: 15px;
+    height: 15px;
     border: 1px solid rgba(122, 122, 122, 0.205);
     border-radius: 100%;
     position: relative; }
@@ -380,7 +380,10 @@ body {
       max-width: 100px;
       text-align: center;
       font-weight: 700; }
+      .modal__input input::placeholder {
+        color: rgba(122, 122, 122, 0.205); }
       .modal__input input:focus {
+        border-color: #3cb4ac;
         outline: none; }
       .modal__input input::-webkit-outer-spin-button, .modal__input input::-webkit-inner-spin-button {
         -webkit-appearance: none;
@@ -390,12 +393,19 @@ body {
     height: 13px;
     width: 13px; }
 
+#modal-basic,
+#modal-bamboo,
+#modal-black,
+#modal-mahogany {
+  cursor: pointer; }
+
 .open {
   visibility: visible; }
 
 .active {
-  visibility: visible;
   border-color: #147b74; }
+  .active .modal__circle-inner {
+    visibility: visible; }
 
 .pledge-open {
   display: flex; }

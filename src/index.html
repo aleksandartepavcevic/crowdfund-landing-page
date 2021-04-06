@@ -222,7 +222,9 @@
         Monitor Riser worldwide. You will get an email once our campaign is
         completed.
       </p>
-      <button class="main__button main__button--thank-you">Got it!</button>
+      <button class="main__button main__button--thank-you" id="thank-you-cta">
+        Got it!
+      </button>
     </div>
 
     <!-- Pledge modal -->
@@ -262,11 +264,17 @@
             <p class="main__paragraph main__paragraph--pledge-input">
               Enter your pledge
             </p>
-            <form action="">
+            <form id="pledge-form-basic">
               <span class="modal__input">
-                <input required type="number" min="1" step="1" />
+                <input required type="number" name="amount" min="1" step="1" />
               </span>
-              <button class="main__button main__button--input">Continue</button>
+              <button
+                type="submit"
+                class="main__button main__button--input"
+                id="continue-cta"
+              >
+                Continue
+              </button>
             </form>
           </div>
         </div>
@@ -297,17 +305,24 @@
             <p class="main__paragraph main__paragraph--pledge-input">
               Enter your pledge
             </p>
-            <form action="">
+            <form id="pledge-form-bamboo">
               <span class="modal__input">
                 <input
                   required
                   type="number"
+                  name="amount"
                   min="25"
                   step="1"
                   placeholder="25"
                 />
               </span>
-              <button class="main__button main__button--input">Continue</button>
+              <button
+                type="submit"
+                class="main__button main__button--input"
+                id="continue-cta"
+              >
+                Continue
+              </button>
             </form>
           </div>
         </div>
@@ -338,17 +353,24 @@
             <p class="main__paragraph main__paragraph--pledge-input">
               Enter your pledge
             </p>
-            <form action="">
+            <form id="pledge-form-black">
               <span class="modal__input">
                 <input
                   required
                   type="number"
+                  name="amount"
                   min="75"
                   step="1"
                   placeholder="75"
                 />
               </span>
-              <button class="main__button main__button--input">Continue</button>
+              <button
+                type="submit"
+                class="main__button main__button--input"
+                id="continue-cta"
+              >
+                Continue
+              </button>
             </form>
           </div>
         </div>
@@ -379,7 +401,7 @@
             <p class="main__paragraph main__paragraph--pledge-input">
               Enter your pledge
             </p>
-            <form>
+            <form id="pledge-form-mahogany">
               <span class="modal__input">
                 <input
                   required
@@ -388,14 +410,15 @@
                   min="200"
                   step="1"
                   placeholder="200"
-                  id="input-box"
                 />
               </span>
-              <input
+              <button
                 type="submit"
-                value="Continue"
                 class="main__button main__button--input"
-              />
+                id="continue-cta"
+              >
+                Continue
+              </button>
             </form>
           </div>
         </div>

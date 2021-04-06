@@ -23,7 +23,7 @@ const blackCta = document.getElementById('black-pledge-cta');
 const mahoganyCta = document.getElementById('mahogany-pledge-cta');
 const input = document.getElementById('input-box');
 
-const modals = [
+const modalsData = [
   {
     name: 'basic',
     checkmarkActivated: 'false',
@@ -31,16 +31,25 @@ const modals = [
   {
     name: 'bamboo',
     checkmarkActivated: 'false',
+    pieces: '101',
   },
   {
     name: 'black',
     checkmarkActivated: 'false',
+    pieces: '64',
   },
   {
     name: 'mahogany',
     checkmarkActivated: 'false',
+    pieces: '0',
   },
 ];
+
+const backersData = {
+  moneyBacked: 89914,
+  totalBackers: 5007,
+  daysLeft: 56,
+};
 
 // Mobile menu
 btnHamburger.addEventListener('click', () => {
@@ -71,7 +80,7 @@ const pledgeOpen = (pledge) => {
 };
 
 const checkIfItsActive = () => {
-  modals.forEach((element) => {
+  modalsData.forEach((element) => {
     if (element.checkmarkActivated == 'true') {
       switch (element.name) {
         case 'basic':
@@ -104,7 +113,7 @@ checkmarkBasic.addEventListener('click', () => {
 
   checkmarkActive(checkmarkBasic);
   pledgeOpen(modalPledgeBasic);
-  modals[0].checkmarkActivated = 'true';
+  modalsData[0].checkmarkActivated = 'true';
 });
 
 checkmarkBamboo.addEventListener('click', () => {
@@ -112,7 +121,7 @@ checkmarkBamboo.addEventListener('click', () => {
 
   checkmarkActive(checkmarkBamboo);
   pledgeOpen(modalPledgeBamboo);
-  modals[1].checkmarkActivated = 'true';
+  modalsData[1].checkmarkActivated = 'true';
 });
 
 checkmarkBlack.addEventListener('click', () => {
@@ -120,7 +129,7 @@ checkmarkBlack.addEventListener('click', () => {
 
   checkmarkActive(checkmarkBlack);
   pledgeOpen(modalPledgeBlack);
-  modals[2].checkmarkActivated = 'true';
+  modalsData[2].checkmarkActivated = 'true';
 });
 
 checkmarkMahogany.addEventListener('click', () => {
@@ -128,7 +137,7 @@ checkmarkMahogany.addEventListener('click', () => {
 
   checkmarkActive(checkmarkMahogany);
   pledgeOpen(modalPledgeMahogany);
-  modals[3].checkmarkActivated = 'true';
+  modalsData[3].checkmarkActivated = 'true';
 });
 
 selectRewardCta.addEventListener('click', () => {
@@ -140,7 +149,7 @@ bambooCta.addEventListener('click', () => {
 
   checkmarkActive(checkmarkBamboo);
   pledgeOpen(modalPledgeBamboo);
-  modals[1].checkmarkActivated = 'true';
+  modalsData[1].checkmarkActivated = 'true';
 });
 
 blackCta.addEventListener('click', () => {
@@ -148,7 +157,7 @@ blackCta.addEventListener('click', () => {
 
   checkmarkActive(checkmarkBlack);
   pledgeOpen(modalPledgeBlack);
-  modals[2].checkmarkActivated = 'true';
+  modalsData[2].checkmarkActivated = 'true';
 });
 
 mahoganyCta.addEventListener('click', () => {
@@ -156,7 +165,7 @@ mahoganyCta.addEventListener('click', () => {
 
   checkmarkActive(checkmarkMahogany);
   pledgeOpen(modalPledgeMahogany);
-  modals[3].checkmarkActivated = 'true';
+  modalsData[3].checkmarkActivated = 'true';
 });
 
 // Bookmark click animation
@@ -176,8 +185,56 @@ bookmark.addEventListener('click', () => {
   }
 });
 
+const inputValue = (event) => {
+  event.preventDefault();
+  const data = new FormData(event.target);
+  const value = data.get('amount');
+  backersData.moneyBacked += Number(value);
+  displayTotalMoney();
+  progress();
+};
+
+const formBasic = document.getElementById('pledge-form-basic');
+const formBamboo = document.getElementById('pledge-form-bamboo');
+const formBlack = document.getElementById('pledge-form-black');
+const formMahogany = document.getElementById('pledge-form-mahogany');
+
+formBasic.addEventListener('submit', (event) => {
+  inputValue(event);
+  thankYouModalOpen();
+});
+formBamboo.addEventListener('submit', (event) => {
+  inputValue(event);
+  thankYouModalOpen();
+});
+formBlack.addEventListener('submit', (event) => {
+  inputValue(event);
+  thankYouModalOpen();
+});
+formMahogany.addEventListener('submit', (event) => {
+  inputValue(event);
+  thankYouModalOpen();
+});
+
+const thankYouModal = document.querySelector('.modal--thank-you');
+const thankYouCta = document.getElementById('thank-you-cta');
+
+const thankYouModalOpen = () => {
+  checkIfItsActive();
+  modal.classList.toggle('open');
+  thankYouModal.classList.toggle('open');
+};
+
+thankYouCta.addEventListener('click', () => {
+  thankYouModal.classList.toggle('open');
+  overlay.classList.toggle('open');
+});
+
 // Progress bar animation
 const progress = () => {
-  let value = backedValue.innerText.replace('$', '').replace(',', '');
-  return (progressBar.style.width = (value / 100000) * 100 + '%');
+  progressBar.style.width = (backersData.moneyBacked / 100000) * 100 + '%';
+};
+
+const displayTotalMoney = () => {
+  backedValue.innerText = `$${backersData.moneyBacked}`;
 };

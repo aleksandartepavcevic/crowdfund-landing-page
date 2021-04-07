@@ -31,17 +31,17 @@ const modalsData = [
   {
     name: 'bamboo',
     checkmarkActivated: 'false',
-    pieces: '101',
+    pieces: 101,
   },
   {
     name: 'black',
     checkmarkActivated: 'false',
-    pieces: '64',
+    pieces: 64,
   },
   {
     name: 'mahogany',
     checkmarkActivated: 'false',
-    pieces: '0',
+    pieces: 1,
   },
 ];
 
@@ -51,6 +51,11 @@ const backersData = {
   daysLeft: 56,
 };
 
+document.addEventListener('DOMContentLoaded', () => {
+  progress();
+  display();
+});
+
 // Mobile menu
 btnHamburger.addEventListener('click', () => {
   mobileMenu.classList.toggle('open');
@@ -59,6 +64,7 @@ btnHamburger.addEventListener('click', () => {
 
 // Modal open
 const modalOpen = () => {
+  display();
   checkIfItsActive();
   modal.classList.toggle('open');
   overlay.classList.toggle('open');
@@ -190,7 +196,8 @@ const inputValue = (event) => {
   const data = new FormData(event.target);
   const value = data.get('amount');
   backersData.moneyBacked += Number(value);
-  displayTotalMoney();
+  backersData.totalBackers++;
+  display();
   progress();
 };
 
@@ -204,15 +211,21 @@ formBasic.addEventListener('submit', (event) => {
   thankYouModalOpen();
 });
 formBamboo.addEventListener('submit', (event) => {
+  modalsData[1].pieces--;
   inputValue(event);
+
   thankYouModalOpen();
 });
 formBlack.addEventListener('submit', (event) => {
+  modalsData[2].pieces--;
   inputValue(event);
   thankYouModalOpen();
 });
 formMahogany.addEventListener('submit', (event) => {
+  modalsData[3].pieces--;
+  checkPiecesLeft(modalsData, mahogany);
   inputValue(event);
+
   thankYouModalOpen();
 });
 
@@ -235,6 +248,63 @@ const progress = () => {
   progressBar.style.width = (backersData.moneyBacked / 100000) * 100 + '%';
 };
 
-const displayTotalMoney = () => {
+const totalBackers = document.getElementById('totalBackers');
+const piecesLeftBamboo = document.querySelectorAll('#pieces-left-bamboo');
+const piecesLeftBlack = document.querySelectorAll('#pieces-left-black');
+const piecesLeftMahogany = document.querySelectorAll('#pieces-left-mahogany');
+
+const display = () => {
   backedValue.innerText = `$${backersData.moneyBacked}`;
+  totalBackers.innerText = `${backersData.totalBackers}`;
+
+  for (let i = 0; i < piecesLeftBamboo.length; i++) {
+    piecesLeftBamboo[i].innerHTML = `${modalsData[1].pieces}<span>left</span>`;
+  }
+
+  for (let i = 0; i < piecesLeftBlack.length; i++) {
+    piecesLeftBlack[i].innerHTML = `${modalsData[2].pieces}<span>left</span>`;
+  }
+
+  for (let i = 0; i < piecesLeftMahogany.length; i++) {
+    piecesLeftMahogany[
+      i
+    ].innerHTML = `${modalsData[3].pieces}<span>left</span>`;
+  }
+};
+
+const innerCard = document.querySelectorAll('.main__card--innerCard');
+
+const checkPiecesLeft = (which) => {
+  switch (
+    which
+    // case 'bamboo':
+    //   bambooCta.classList.replace(
+    //     'main__button--innerCard',
+    //     'main__button--outOfStock'
+    //   );
+
+    //   innerCard[0].classList.toggle('out-of-stock');
+    //   break;
+
+    // case 'black':
+    //   blackCta.classList.replace(
+    //     'main__button--innerCard',
+    //     'main__button--outOfStock'
+    //   );
+
+    //   innerCard[1].classList.toggle('out-of-stock');
+    //   break;
+
+    // case 'mahogany':
+    //   if (modalsData[3].pieces <= 0) {
+    //     mahoganyCta.classList.replace(
+    //       'main__button--innerCard',
+    //       'main__button--outOfStock'
+    //     );
+
+    //     innerCard[2].classList.toggle('out-of-stock');
+    //   }
+    //   break;
+  ) {
+  }
 };

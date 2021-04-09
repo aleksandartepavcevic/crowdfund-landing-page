@@ -92,6 +92,13 @@
   &__pledge-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    @media screen and (max-width: 425px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__pledge-input {
@@ -100,6 +107,14 @@
     align-items: center;
     padding-top: 2.4rem;
     border-top: 1px solid $lightGray;
+
+    @media screen and (max-width: 575px) {
+      flex-direction: column;
+
+      form {
+        margin-top: 1.5rem;
+      }
+    }
   }
 
   &__input {
@@ -122,6 +137,10 @@
       max-width: 100px;
       text-align: center;
       font-weight: 700;
+
+      @media screen and (max-width: 425px) {
+        padding: 0.8em 1em;
+      }
 
       &::placeholder {
         color: $lightGray;

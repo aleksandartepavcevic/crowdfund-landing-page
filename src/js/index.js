@@ -258,17 +258,21 @@ const display = () => {
   totalBackers.innerText = `${backersData.totalBackers}`;
 
   for (let i = 0; i < piecesLeftBamboo.length; i++) {
-    piecesLeftBamboo[i].innerHTML = `${modalsData[1].pieces}<span>left</span>`;
+    piecesLeftBamboo[
+      i
+    ].innerHTML = `${modalsData[1].pieces}<span style="margin-left:1rem">left</span>`;
   }
 
   for (let i = 0; i < piecesLeftBlack.length; i++) {
-    piecesLeftBlack[i].innerHTML = `${modalsData[2].pieces}<span>left</span>`;
+    piecesLeftBlack[
+      i
+    ].innerHTML = `${modalsData[2].pieces}<span style="margin-left:1rem">left</span>`;
   }
 
   for (let i = 0; i < piecesLeftMahogany.length; i++) {
     piecesLeftMahogany[
       i
-    ].innerHTML = `${modalsData[3].pieces}<span>left</span>`;
+    ].innerHTML = `${modalsData[3].pieces}<span style="margin-left:1rem">left</span>`;
   }
 };
 

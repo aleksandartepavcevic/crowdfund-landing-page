@@ -171,7 +171,16 @@ body {
       margin-bottom: 0; }
     .main__heading--modal-inner {
       padding: 0;
-      font-size: 1.4rem; }
+      font-size: 1.4rem;
+      margin-bottom: 0; }
+    .main__heading--modal-innerPledge {
+      margin-bottom: 0;
+      padding: 0; }
+      @media screen and (max-width: 425px) {
+        .main__heading--modal-innerPledge {
+          margin-top: 1rem; } }
+    .main__heading--modal-pledge {
+      color: #3cb4ac; }
     .main__heading--modal-innerCard {
       font-size: 1.8rem; }
       .main__heading--modal-innerCard span {
@@ -252,6 +261,9 @@ body {
     .main__button--input {
       padding: 1em 2em;
       margin-left: 1.5rem; }
+      @media screen and (max-width: 425px) {
+        .main__button--input {
+          padding: 0.8em 1em; } }
   .main__bookmarkWrapper {
     position: relative;
     display: flex;
@@ -358,13 +370,24 @@ body {
     margin-left: 2rem; }
   .modal__pledge-header {
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem; }
+    @media screen and (max-width: 425px) {
+      .modal__pledge-header {
+        flex-direction: column;
+        align-items: flex-start; } }
   .modal__pledge-input {
     display: none;
     justify-content: space-between;
     align-items: center;
     padding-top: 2.4rem;
     border-top: 1px solid rgba(122, 122, 122, 0.205); }
+    @media screen and (max-width: 575px) {
+      .modal__pledge-input {
+        flex-direction: column; }
+        .modal__pledge-input form {
+          margin-top: 1.5rem; } }
   .modal__input {
     position: relative; }
     .modal__input::before {
@@ -382,6 +405,9 @@ body {
       max-width: 100px;
       text-align: center;
       font-weight: 700; }
+      @media screen and (max-width: 425px) {
+        .modal__input input {
+          padding: 0.8em 1em; } }
       .modal__input input::placeholder {
         color: rgba(122, 122, 122, 0.205); }
       .modal__input input:focus {

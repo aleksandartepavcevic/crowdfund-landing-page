@@ -123,6 +123,20 @@
     &--modal-inner {
       padding: 0;
       font-size: 1.4rem;
+      margin-bottom: 0;
+    }
+
+    &--modal-innerPledge {
+      margin-bottom: 0;
+      padding: 0;
+
+      @media screen and (max-width: 425px) {
+        margin-top: 1rem;
+      }
+    }
+
+    &--modal-pledge {
+      color: $moderateCyan;
     }
 
     &--modal-innerCard {
@@ -246,6 +260,10 @@
     &--input {
       padding: 1em 2em;
       margin-left: 1.5rem;
+
+      @media screen and (max-width: 425px) {
+        padding: 0.8em 1em;
+      }
     }
   }
 
